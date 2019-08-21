@@ -1,0 +1,52 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Win&#39;s Blog on Win&#39;s Blog</title>
+    <link>http://Winturtle.github.io/</link>
+    <description>Recent content in Win&#39;s Blog on Win&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 21 Aug 2019 15:12:09 +0800</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>20190821-第一日</title>
+      <link>http://Winturtle.github.io/posts/20190821/</link>
+      <pubDate>Wed, 21 Aug 2019 15:12:09 +0800</pubDate>
+      
+      <guid>http://Winturtle.github.io/posts/20190821/</guid>
+      <description>
+
+&lt;p&gt;今天開始每天都要寫，歷經一整個早上的奮戰，瘋狂試用一堆的hugo&amp;rsquo;s themes，終於找到適用也版面清晰的了。但不知為何放上github暫管後，就變形了。所以只好在重新用另一個看看。決定在這加上每天建立文件後要用的終端機命令好了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;將-public-資料夾連結到-github-上的github-io&#34;&gt;將 /public 資料夾連結到 GitHub 上的github.io&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cd public
+git init
+git remote add origin https://github.com/chswei/chswei.github.io.git
+git add .
+git commit -m &amp;quot;Initial commit&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;將整個-website-hugo-資料夾連結到-github-上的-website-hugo&#34;&gt;將整個 website-hugo 資料夾連結到 GitHub 上的 website-hugo&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ../
+git init
+git remote add origin https://github.com/chswei/website-hugo.git
+git add .
+git commit -m &amp;quot;Initial commit&amp;quot;
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://Winturtle.github.io/home/winturtle/美女/白石麻衣/7.png&#34; alt=&#34;每日一美：白石麻衣&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

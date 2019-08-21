@@ -1,35 +1,20 @@
-{{ define "main" }}
+{{ partialCached "header/head.html" . }}
 
-<!-- page-title -->
-<section class="section bg-secondary">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <h4>{{ .Title }}</h4>
-      </div>
-    </div>
+  <div id="main">
+    {{ partial "nav.html" . }}
+    <h1 class="animated flipInX"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <p class="post-info animated fadeIn">{{ .FuzzyWordCount }} Words | Approximately {{ .ReadingTime }} Minutes Read | Last Modified on {{ .Lastmod.Format "January 2, 2006" }}
+    {{ .Content }}
+
+
+    {{ if isset .Site.Params "social" }}
+        {{ partialCached "social.html" . }}
+    {{ end }}
   </div>
-</section>
-<!-- /page-title -->
 
-<!-- blog single -->
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8">
-        <ul class="list-inline d-flex justify-content-between py-3">
-          <li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{.Site.Params.author}}</li>
-          <li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{ .PublishDate.Format "Jan 02, 2006" }}</li>
-        </ul>
-        <article class="content">
-          <img src="{{.Params.Image | absURL }}" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4">
-          {{.Content}}
-        </article>
-      </div>
-      {{partial "sidebar.html" . }}
-    </div>
-  </div>
-</section>
-<!-- /blog single -->
+  
 
-{{ end }}
+
+
+{{ partial "sidemenu.html" . }}
+{{ partialCached "footer/foot.html" . }}

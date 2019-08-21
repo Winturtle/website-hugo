@@ -1,4 +1,5 @@
 baseURL = "http://Winturtle.github.io/"
 languageCode = "zh-tw"
 title = "Win's Blog"
-theme = "parsa-hugo-personal-blog-theme"
+theme = "pristine"
+publishDir = "docs"
