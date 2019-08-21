@@ -1,0 +1,28 @@
+baseURL = "http://Winturtle.github.io/"
+languageCode = "zh-tw"
+title = "Win's Blog"
+theme = "charaka-hugo-theme"
+copyright = "&copy; <a href=\"https://github.com/natarajmb\">Nataraj Basappa</a> 2018"
+disqusShortname = ""
+googleAnalytics = ""
+
+[params]
+
+[params.highlight]
+  style = "zenburn"
+
+[[params.social]]
+  url = "about.html"
+  fa_icon = "fas fa-info" 
+
+[[params.social]]
+  url = "https://github.com/Winturtle"
+  fa_icon = "fab fa-github"
+
+[[params.social]]
+  url = "https://www.instagram.com/k617turtle/"
+  fa_icon = "fab fa-instagram"
+
+[[params.social]]
+  url = "https://twitter.com/Winturtle"
+  fa_icon = "fab fa-twitter"
