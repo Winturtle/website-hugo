@@ -1,40 +1,15 @@
-{{ partialCached "header/head.html" . }}
-
-  <div id="main">
-    {{ partial "nav.html" . }}
-
-
-    <!-- Groups content according to content section.-->
-    {{ range $.Site.RegularPages.GroupBy "Section" }}
-    <!-- Checks for existence of _index.md for a section; if available, pulls from "title" in front matter -->
-    {{ with $.Site.GetPage "section" .Key }}
-    <h3>{{.Title}}</h3>
-    {{ else }}
-    <!-- If no _index.md is available, ".Key" defaults to the section title and filters to title casing -->
-    <h3>{{ .Key | title }}</h3>
-    {{ end }}
-    <ul>
-        {{ range $.Site.RegularPages.ByDate }}
-        <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-        <div class="meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</div>
-        </li>
-        {{ end }}
-    </ul>
-    {{ end }}
-
-
-    {{ if isset .Site.Params "social" }}
-        {{ partialCached "social.html" . }}
-    {{ end }}
-  
-  </div>
-
-  
-
-
-
-{{ partial "sidemenu.html" . }}
-{{ partialCached "footer/foot.html" . }}
-
-
+{{ define "content" }}
+{{ $data := .Data }}
+<div class="post-warp archive">
+    <h2 class="post-title" style="text-align:right;padding-bottom:2em">-&nbsp;{{ $data.Plural | humanize }}&nbsp;·&nbsp;{{ .Title }}&nbsp;-</h2>
+    {{ range (.Paginate .Pages).Pages }}
+    <article class="archive-item">
+        <a href="{{ .Permalink }}" class="archive-item-link hvr-underline-from-center">{{ .Title }}</a>
+        <span class="archive-item-date">
+            {{ .Date.Format "January 2, 2006" }}
+        </span>
+    </article>
+    {{ end }} 
+    {{ partial "paginator.html" . }}
+</div>
+{{end }}

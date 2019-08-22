@@ -1,11 +1,21 @@
-<footer class="site-footer">
-  <section class="rss"><a class="subscribe-button icon-feed" href="/index.xml"></a></section>
-  {{ with .Site.Params.twitter }}<section class="twitter"><a class="icon-twitter" href="https://twitter.com/{{ . }}"> {{ . }}</a></section>{{ end }}
-  {{ with .Site.Params.facebook }}<section class="facebook"><a class="icon-facebook" href="https://www.facebook.com/{{ . }}"> {{ . }}</a></section>{{ end }}
-  <section class="copyright">&copy; {{ now.Format "2006" }} {{ .Site.Title }}</section>
-  <section class="poweredby"><a href="http://thedarkroast.com/arabica">Arabica</a> theme by Sean Lunsford. Published with <a href="https://gohugo.io">Hugo</a>.</section>
+<footer class="footer">
+    <div class="copyright">
+        &copy;
+        {{ with .Site.Params.since }}
+        <span itemprop="copyrightYear">{{.}} - {{ now.Year }}</span>
+        {{ end }}
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         {{ if .Site.Params.author }}
+            <span class="author" itemprop="copyrightHolder"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.author  }}</a> | </span> 
+         {{ end }}
+
+         {{ with .Site.Params.beian }}
+            <a href="http://www.miibeian.gov.cn/" target="_blank" rel="external nofollow">{{ . }} </a> |
+         {{ end }}
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
 </footer>
-<!-- custom js -->
-{{ range .Site.Params.customJS }}
-  <script src="{{ "/js/" | relURL }}{{ . }}"></script>
-{{ end }}
+
+{{ partial "js.html" . }}

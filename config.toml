@@ -1,5 +1,32 @@
 baseURL = "http://Winturtle.github.io/"
 languageCode = "zh-tw"
 title = "Win's Blog"
-theme = "pristine"
+theme = "LeaveIt"
 publishDir = "docs"
+
+[menu]
+  [[menu.main]]
+    name = "文件"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "圖片"
+    url = "/images/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[params.social]
+    GitHub = "Winturtle"
+    Twitter = "Winturtle"
+    Email   = "winwu@aol.com"
+    Instagram = "k617turtle"
